@@ -1,1 +1,18 @@
-<p>game-page works!</p>
+<div class="header-container">
+    <app-option-button [buttonText]="'ir a tabla de posiciones'" (externalButtonAction)="goToLeaderBoard()"></app-option-button>
+    <app-title [titleText]="'Trivia'"></app-title>
+    <app-option-button [buttonText]="'Cerrar sesión'" (externalButtonAction)="signOut()"></app-option-button>
+</div>
+<div class="text-main">
+    <div class="text-container">
+        <img src="../../assets/correct-icon.png" alt="" *ngIf="correctAnswer==1">
+        <img src="../../assets/wrong-icon.png" alt="" *ngIf="correctAnswer==0">
+        <span *ngIf="correctAnswer==-1">{{gameService.currentQuestion}}</span>
+    </div>
+</div>
+<div class="options-container">
+<app-answer-button *ngFor="let option of gameService.answerOptions" [answer]="option" (buttonSelected)="selectAnswer($event)"></app-answer-button>
+</div>
+<div class="next-button">
+    <app-option-button [buttonText]="'Siguiente'" (externalButtonAction)="nextQuestion()"></app-option-button>
+</div>

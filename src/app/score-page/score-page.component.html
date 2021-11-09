@@ -1,1 +1,7 @@
-<p>score-page works!</p>
+<div class="header-container">
+    <app-option-button [buttonText]="'Regresar'" (externalButtonAction)="devolver()"></app-option-button>
+    <app-title class="title" [titleText]="'Trivia'"></app-title>
+</div>
+<div class="players-list-container">
+    <app-playercontainer *ngFor="let player of scoreService.players" [player]="player"></app-playercontainer>
+</div>

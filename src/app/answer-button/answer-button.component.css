@@ -1,0 +1,19 @@
+.button-container{
+    color: white;
+    background-color: #2d50c0;
+    width: 300px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+
+.button-container:active{
+    background-color: #1e388f;
+}
+
+.button-container:hover{
+    cursor: pointer;
+}
